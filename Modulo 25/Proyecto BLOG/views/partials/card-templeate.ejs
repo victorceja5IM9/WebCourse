@@ -1,0 +1,18 @@
+<%if(typeof posts !== 'undefined'){ %>
+<%for (let index = 0; index < posts.length; index++) {%>
+<div class="card" id="<%= index %>" style="width: 18rem; display: inline-block;">
+    <img src="img/mountains.png" class="card-img-top" alt="..." style="height: 100px;">
+    <div class="card-body">
+      <h5 class="card-title"><%=posts[index].titulo %></h5>
+      <p class="card-text"><%= posts[index].contenido%></p>
+    </div>
+    <div class="card-footer">
+        <a href="/postinf" id="b-<%= index %>" class=" btnb btn btn-primary">Leer Completo</a>
+        <a href="" id="d-<%= index %>" class="btnd btn btn-danger">Borrar</a>
+    </div>
+</div>
+<%}%>
+<%}%>
+
+<% 
+%>

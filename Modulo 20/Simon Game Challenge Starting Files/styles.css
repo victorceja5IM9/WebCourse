@@ -1,0 +1,110 @@
+body {
+  text-align: center;
+  background-color: #011F3F;
+}
+
+#level-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 3rem;
+  margin:  5%;
+  color: #FEF2BF;
+}
+
+.container {
+  display: block;
+  margin: auto;
+  background-color: black;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  justify-content: center;
+  padding: 15px;
+  position: relative;
+}
+
+.circle{
+  display: flex;
+  margin: 0 auto;
+  background-color: transparent;
+  width: 150px;
+  height: 450px;
+  left: 0;
+  right: 0;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  position: absolute;
+}
+
+.defcircle{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.btn {
+  margin: 10px;
+  display: inline-block;
+  height: 190px;
+  width: 190px;
+  border-radius: 10%;
+  
+}
+
+.game-over {
+  background-color: red;
+  opacity: 0.8;
+}
+
+.red {
+  background-color: red;
+  border-top-right-radius: 90%;
+}
+
+.green {
+  background-color: green;
+  border-top-left-radius: 90%;
+}
+
+.blue {
+  background-color: blue;
+  border-bottom-right-radius: 90%;
+}
+
+.yellow {
+  background-color: yellow;
+  border-bottom-left-radius: 90%;
+}
+
+.pressed {
+  box-shadow: 0 0 20px white;
+  background-color: grey;
+}
+
+.row{
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  height: 50%;
+}
+
+.row2{
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  height: 50%;
+
+}
+
+h2{
+  color: white;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-align: center;
+  font-size: xxx-large;
+}

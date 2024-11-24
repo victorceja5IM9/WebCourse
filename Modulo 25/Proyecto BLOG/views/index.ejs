@@ -1,0 +1,66 @@
+<%- include("partials/header.ejs")%>
+    <script>
+        function ShowHideForm(){
+    var container = document.getElementsByClassName("form")[0];
+    console.log(container);
+    if(container.style.visibility == "hidden")
+        container.style.visibility = "visible";
+    else
+        container.style.visibility = "hidden";
+}
+    </script>
+    <div class="post-form">
+        <p>¿Qué ha ocurrido hoy?</p>
+        <button id="post-form" onclick="ShowHideForm()">
+        </button>
+        <div class="form">
+            <form action="/post" method="POST">
+                <input type="text" name="titulo" id="titulo" placeholder="titulo">
+                <input type="text" name="contenido" id="contenido" placeholder="contenido">
+                <button type="submit" id="posting" ></button>
+            </form>
+        </div>
+    </div>
+    <div class="main ">
+        <div class="posts-collection">
+            <%- include("partials/card-templeate.ejs")%>
+        </div>
+        <div class="category-list">
+            <h4>Categorías de Publicaciones</h3>
+            <ul>
+                <a href=""><li>Escolar</li></a>
+                <a href=""><li>Laboral</li></a>
+                <a href=""><li>Salud</li></a>
+                <a href=""><li>Deporte</li></a>
+                <a href=""><li>Cocina</li></a>
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const botonesBorrar = document.querySelectorAll('.btnd');
+    botonesBorrar.forEach(boton => {
+        boton.addEventListener('click', function(event) {
+            event.preventDefault(); // Evita el comportamiento predeterminado del enlace
+
+            const indice = this.id; // Obtiene el índice de la tarjeta desde el ID del botón
+            fetch(`/delpost/${indice}`, {
+                method: 'DELETE'
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Elimina la tarjeta del DOM
+                    document.getElementById(`${indice}`).remove();
+                } else {
+                    console.error('Error al borrar la tarjeta');
+                }
+            })
+            .catch(error => {
+                console.error('Error al borrar la tarjeta:', error);
+            });
+        });
+    });
+});
+    </script>
+<%- include("partials/footer.ejs")%>
